@@ -12,9 +12,9 @@
 
     <style>
         body {
-            background: linear-gradient(135deg, #4db6ac, #26a69a);
+            background: linear-gradient(135deg, #26a69a, #e0f7fa);
             color: #333;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             padding-top: 60px; /* Adjust for navbar height */
         }
 
@@ -32,10 +32,15 @@
         }
 
         .container {
-            background-color: #e0f7fa;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+            background-image: url('/images/img1.jpg'); /* Gambar background untuk container */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        /* Properti yang sudah ada dan ingin dipertahankan */
+        background-color: #e0f7fa; /* Anda bisa menghapus ini jika tidak ingin warna fallback */
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
         }
 
         .card {
