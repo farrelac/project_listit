@@ -16,10 +16,10 @@ class ToDoController extends Controller
     {
         $max_data = 3;
 
-        if(request('search')){
-            $data = Todo::where('task', 'like', '%'.request('search').'%') -> paginate($max_data) -> withQueryString();
+        if (request('search')) {
+            $data = Todo::where('task', 'like', '%' . request('search') . '%')->paginate($max_data)->withQueryString();
         } else {
-            $data = Todo::orderBy('task', 'asc') -> paginate($max_data);
+            $data = Todo::orderBy('task', 'asc')->paginate($max_data);
         }
         return view("ToDo.app", compact('data'));
     }
@@ -51,7 +51,7 @@ class ToDoController extends Controller
         ];
 
         Todo::create($data);
-        return redirect() -> route('todo') -> with('success', 'Berhasil menyimpan data!');
+        return redirect()->route('todo')->with('success', 'Berhasil menyimpan data!');
     }
 
     /**
@@ -89,14 +89,14 @@ class ToDoController extends Controller
         ];
 
         Todo::where('id', $id)->update($data);
-        return redirect() -> route('todo') -> with('success', 'Berhasil menyimpan perbaikan data');
+        return redirect()->route('todo')->with('success', 'Berhasil menyimpan perbaikan data');
     }
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        Todo::where('id', $id) -> delete();
-        return redirect() -> route('todo') -> with('success', 'Berhasil menghapus data');
+        Todo::where('id', $id)->delete();
+        return redirect()->route('todo')->with('success', 'Berhasil menghapus data');
     }
 }
